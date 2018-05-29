@@ -17,7 +17,7 @@ public class Methods {
                     case 3: task3(); break;
                     case 4: task4(); break;
                     case 5: task5(); break;
-                    case 6: break;
+                    case 6: task6(); break;
                     case 7: task7(); break;
                     case 8: task8(); break;
                     case 9: task9(); break;
@@ -82,6 +82,33 @@ public class Methods {
             }
             System.out.println("\nThe largest number in the list is " + max);
             System.out.println("The lowest number in the list is " + min);
+        }
+        private static void task6(){
+            try{
+                Scanner scanner = new Scanner(System.in);
+                int a,b,c;
+                do {
+                    System.out.println("Enter a: ");
+                    a = scanner.nextInt();
+                    System.out.println("Enter b: ");
+                    b = scanner.nextInt();
+                    System.out.println("Enter c: ");
+                    c = scanner.nextInt();
+                }while(a<=0 || b<=0 ||c <=0);
+                if(possibilityOfSuchTriangle(a,b,c)||possibilityOfSuchTriangle(b,c,a)||possibilityOfSuchTriangle(c,a,b))
+                    System.out.println("There could be such a triangle");
+                else
+                    System.out.println("There couldn't be such a triangle");
+
+            }catch(InputMismatchException ime){
+                System.out.println("You input not integer number");
+            }
+        }
+        private static boolean possibilityOfSuchTriangle(int a, int b, int c){
+            if (a * a + b * b == c * c)
+                return true;
+            else
+                return false;
         }
         private static void task5(){
             Scanner scanner = new Scanner(System.in);
