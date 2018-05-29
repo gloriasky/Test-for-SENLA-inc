@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Methods {
@@ -19,7 +20,7 @@ public class Methods {
                     case 4: break;
                     case 5: break;
                     case 6: break;
-                    case 7: break;
+                    case 7: task7(); break;
                     case 8: task8(); break;
                     case 9: task9(); break;
                     case 10: break;
@@ -72,6 +73,26 @@ public class Methods {
                         System.out.println(number + " is a palindrom!");
                 }
             }
+        }
+        private static void task7(){
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter the length of our array: ");
+            int length= scanner.nextInt();
+            Random rnd = new Random();
+            int[] array = new int[length];
+            int min = 99;
+            int max = 10;
+            for(int i = 0; i<length;i++)
+                array[i] = rnd.nextInt(89)+10;
+            for (int i = 0; i<length;i++) {
+                System.out.print(array[i] + " ");
+                if(array[i]>max)
+                    max = array[i];
+                if(array[i]<min)
+                    min = array[i];
+            }
+            System.out.println("\nThe largest number in the list is " + max);
+            System.out.println("The lowest number in the list is " + min);
         }
         private static void task3(){
             Scanner scanner = new Scanner(System.in);
