@@ -1,8 +1,6 @@
 package com.company;
 
-import java.util.InputMismatchException;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Methods {
         public static void menu() {
@@ -17,7 +15,7 @@ public class Methods {
                     case 1: task1(); break;
                     case 2: break;
                     case 3: task3(); break;
-                    case 4: break;
+                    case 4: task4(); break;
                     case 5: task5(); break;
                     case 6: break;
                     case 7: task7(); break;
@@ -99,6 +97,25 @@ public class Methods {
                     count++;
             }
             System.out.println(word + " is in the text  " + count + "  times.");
+        }
+        private static void task4() {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter your sentence: " + "\n");
+            String str = scanner.nextLine();
+            String[] st = str.split("(\\W)", 0);
+            Map<String, Integer> ourDict = new HashMap<>();
+            for(int i = 0; i<st.length;i++){
+                String l = st[i].toLowerCase();
+                if(!ourDict.containsKey(l) && st[i]!=null){
+                    int count = 1;
+                    for(int k = i+1;k<st.length;k++)
+                        if(st[i].equalsIgnoreCase(st[k]))
+                            count++;
+                    ourDict.put(l, count);
+                }
+            }
+            System.out.println(ourDict.keySet());
+            System.out.println(ourDict.values());
         }
         private static void task3(){
             Scanner scanner = new Scanner(System.in);
