@@ -31,15 +31,6 @@ public class Methods {
                 answer = scr.nextLine();
             }while(answer.equalsIgnoreCase("YES") || answer.equalsIgnoreCase("ДА"));
         }
-//        public static void task4(){
-//            Scanner scanner = new Scanner(System.in);
-//            System.out.print("Enter your sentence: "+"\n");
-//            String str = scanner.nextLine();
-//            String[] st = str.split("( |,)", 0);
-//            for(int i = 0;i<st.length;i++){
-//                System.out.println(st[i]);
-//            }
-//        }
         private static void task9(){
             try{
             Scanner scanner = new Scanner(System.in);
