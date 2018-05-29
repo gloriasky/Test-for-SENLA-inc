@@ -1,5 +1,6 @@
 package com.company;
 
+import java.net.SocketPermission;
 import java.util.*;
 
 public class Methods {
@@ -13,7 +14,7 @@ public class Methods {
                 int i = scanner.nextInt();
                 switch (i) {
                     case 1: task1(); break;
-                    case 2: break;
+                    case 2: task2();break;
                     case 3: task3(); break;
                     case 4: task4(); break;
                     case 5: task5(); break;
@@ -155,6 +156,31 @@ public class Methods {
                     System.out.println(word + " is not a palindrom");
             else
                 System.out.println(word + " is not a palindrom");
+        }
+        private static void task2(){
+            try{
+                Scanner scanner = new Scanner(System.in);
+                int a,b,c;
+                System.out.println("Enter a: ");
+                a = scanner.nextInt();
+                System.out.println("Enter b: ");
+                b = scanner.nextInt();
+                System.out.println("Sum of "+a +" and "+ b +" is " + (a+b));
+                System.out.println("Difference of "+a +" and "+ b +" is " + (a-b));
+                int greatestCommonDivisor = 0;
+                for (int i = 1; i <= a * b; i++)
+                {
+                    if(a % i == 0 && b % i == 0)
+                    {
+                        greatestCommonDivisor = i;
+                    }
+                }
+                int leastCommonMultiply = a * b / greatestCommonDivisor;
+                System.out.println("Greatest Common Divisor of "+a +" and "+ b +" is "  + greatestCommonDivisor);
+                System.out.println("Least Common Multiple of "+a +" and "+ b +" is "  + leastCommonMultiply);
+            }catch(InputMismatchException ime){
+                System.out.println("You input not integer number");
+            }
         }
         private static void task1(){
             try {
