@@ -21,7 +21,7 @@ public class Methods {
                     case 6: break;
                     case 7: break;
                     case 8: break;
-                    case 9: break;
+                    case 9: task9();break;
                     case 10: break;
                     default:
                         System.out.println("Are you sure that task exist?");
@@ -29,6 +29,28 @@ public class Methods {
                 System.out.println("Would you like to check anything else?");
                 answer = scr.nextLine();
             }while(answer.equalsIgnoreCase("YES") || answer.equalsIgnoreCase("ДА"));
+        }
+        private static void task9(){
+            try{
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter last number(N): "+"\n");
+            int n = scanner.nextInt();
+            int sum = 0;
+            boolean check = false;
+            for(int k = 2;k<=n;k+=2){
+                System.out.print(k + " ");
+                sum+=k;
+                check = true;
+            }
+            if(check) {
+                System.out.println("\nSum of evens = " + sum);
+            }
+            else {
+                System.out.println("There are no even numbers between 0 and " + n);
+            }
+            }catch(InputMismatchException ime){
+                System.out.println("You input not integer number");
+            }
         }
         private static void task1(){
             try {
