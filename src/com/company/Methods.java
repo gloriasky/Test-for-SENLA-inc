@@ -13,15 +13,15 @@ public class Methods {
                 System.out.println("What task would you like to check?");
                 int i = scanner.nextInt();
                 switch (i) {
-                    case 1:task1(); break;
+                    case 1: task1(); break;
                     case 2: break;
-                    case 3: break;
+                    case 3: task3(); break;
                     case 4: break;
-                    case 5:break;
+                    case 5: break;
                     case 6: break;
                     case 7: break;
-                    case 8: break;
-                    case 9: task9();break;
+                    case 8: task8(); break;
+                    case 9: task9(); break;
                     case 10: break;
                     default:
                         System.out.println("Are you sure that task exist?");
@@ -30,6 +30,15 @@ public class Methods {
                 answer = scr.nextLine();
             }while(answer.equalsIgnoreCase("YES") || answer.equalsIgnoreCase("ДА"));
         }
+//        public static void task4(){
+//            Scanner scanner = new Scanner(System.in);
+//            System.out.print("Enter your sentence: "+"\n");
+//            String str = scanner.nextLine();
+//            String[] st = str.split("( |,)", 0);
+//            for(int i = 0;i<st.length;i++){
+//                System.out.println(st[i]);
+//            }
+//        }
         private static void task9(){
             try{
             Scanner scanner = new Scanner(System.in);
@@ -51,6 +60,30 @@ public class Methods {
             }catch(InputMismatchException ime){
                 System.out.println("You input not integer number");
             }
+        }
+        private static void task8(){
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter last number(N): "+"\n");
+            int n = scanner.nextInt();
+            for(int i = 0; i<n;i++){
+                String number = Integer.toString(i);
+                if(number.length()%2==0){
+                    if(palindrom(number))
+                        System.out.println(number + " is a palindrom!");
+                }
+            }
+        }
+        private static void task3(){
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter your word: "+"\n");
+            String word = scanner.nextLine();
+            if(word.length()%2==0)
+                if(palindrom(word))
+                    System.out.println(word + " is a palindrom!");
+                else
+                    System.out.println(word + " is not a palindrom");
+            else
+                System.out.println(word + " is not a palindrom");
         }
         private static void task1(){
             try {
@@ -91,5 +124,15 @@ public class Methods {
                 System.out.println("You input not integer number");
             }
 
+        }
+        private static boolean palindrom(String word){
+            boolean isPalindrom = true;
+            char[] w = word.toCharArray();
+            for(int k = 0; k<word.length();k++){
+                if(w[k] != w[word.length()-1-k]){
+                    isPalindrom = false;
+                }
+            }
+            return isPalindrom;
         }
 }
