@@ -18,7 +18,7 @@ public class Methods {
                     case 2: break;
                     case 3: task3(); break;
                     case 4: break;
-                    case 5: break;
+                    case 5: task5(); break;
                     case 6: break;
                     case 7: task7(); break;
                     case 8: task8(); break;
@@ -84,6 +84,21 @@ public class Methods {
             }
             System.out.println("\nThe largest number in the list is " + max);
             System.out.println("The lowest number in the list is " + min);
+        }
+        private static void task5(){
+            Scanner scanner = new Scanner(System.in);
+            Scanner scr = new Scanner(System.in);
+            System.out.println("Enter your text: ");
+            String text = scanner.nextLine();
+            System.out.println("Enter your word: ");
+            String word = scr.nextLine();
+            String[] allWordsInTheText = text.split("(\\W|\\s|\\D)");
+            int count = 0;
+            for(int i = 0; i<allWordsInTheText.length;i++){
+                if(allWordsInTheText[i].equalsIgnoreCase(word))
+                    count++;
+            }
+            System.out.println(word + " is in the text  " + count + "  times.");
         }
         private static void task3(){
             Scanner scanner = new Scanner(System.in);
